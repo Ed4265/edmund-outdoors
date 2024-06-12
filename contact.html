@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Edmund Outdoors</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function(){
+          emailjs.init("qfAfW-BzBsQL54ctR"); // Your EmailJS user ID
+      })();
+    </script>
+</head>
+<script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+<body>
+    <header>
+        <h1>Edmund Outdoors</h1>
+        <nav>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="socials.html">Socials</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us to learn more about what we can do for you.</p>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Edmund Outdoors. All rights reserved.</p>
+      <div class="social-icons">
+          <a href="https://www.facebook.com/profile.php?id=61550856481891" target="_blank">
+              <img src="icons/facebook-svgrepo-com.svg" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/fur_feathers_fish/" target="_blank">
+              <img src="icons/instagram-svgrepo-com.svg" alt="Instagram">
+          </a>
+          <a href="https://www.amazon.co.uk/s?i=digital-text&rh=p_27%3AEdmund+Outdoors&s=relevancerank&text=Edmund+Outdoors&ref=dp_byline_sr_ebooks_1" target="_blank">
+              <img src="icons/amazon-svgrepo-com.svg" alt="Amazon">
+          </a>
+          <a href="https://www.youtube.com/@edmundoutdoors" target="_blank">
+              <img src="icons/youtube-svgrepo-com.svg" alt="YouTube">
+          </a>
+          <a href="https://www.edmundoutdoors.com/contact.html">
+              <img src="icons/mail-svgrepo-com.svg" alt="Email">
+          </a>
+      </div>
+  </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Debugging: Log form data
+            console.log("Form data:", new FormData(this));
+
+            emailjs.sendForm('service_rkpfyhn', 'template_j9dotun', this)
+                .then(function() {
+                    alert('Message sent successfully!');
+                    console.log("EmailJS Success");
+                }, function(error) {
+                    alert('Failed to send the message. Please try again later.');
+                    console.error("EmailJS Error:", error);
+                });
+        });
+    </script>
+</body>
+</html>
