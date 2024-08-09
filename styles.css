@@ -173,7 +173,7 @@ section p, section ul {
 
 .product {
     display: flex;
-    align-items: flex-start; /* Align items at the top */
+    align-items: center; /* Vertically align image and text */
     margin: 20px 0;
     padding: 15px;
     border: 1px solid #4a6658;
@@ -183,19 +183,18 @@ section p, section ul {
 }
 
 .product img {
-    width: auto; /* Maintain the aspect ratio */
-    height: 150px; /* Uniform height for all images */
-    object-fit: contain; /* Scale the image to fit within the defined height */
+    width: 150px;
+    height: 150px; /* Ensure all images are square */
+    object-fit: cover; /* Crop images to fill the box, maintaining aspect ratio */
     border-radius: 10px;
     margin-right: 20px;
-    display: block;
 }
 
 .product-info {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Ensure content starts at the top */
+    justify-content: space-between; /* Space out text and button */
     padding-left: 0; /* Align text with image */
 }
 
@@ -230,7 +229,55 @@ section p, section ul {
     background-color: #3a5648; /* Darker green on hover */
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
 
+label {
+    font-weight: bold;
+    color: #2d3e34; /* Darker dull green */
+    margin-bottom: 5px; /* Add space below labels */
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #4a6658; /* Button green */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 1em;
+    margin-bottom: 10px; /* Add space below inputs and textareas */
+}
+
+button[type="submit"], .buy-button, .contact-button {
+    background-color: #4a6658; /* Button green */
+    color: #e1e7df;
+    border: none;
+    padding: 12px 24px; /* Adjusted padding for a better look */
+    border-radius: 25px; /* Highly rounded corners for a more modern look */
+    cursor: pointer;
+    font-size: 16px; /* Font size for the button text */
+    font-weight: bold; /* Make the button text bold */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    margin-top: 15px; /* Space above the button */
+    display: inline-block;
+    text-align: center;
+    width: 100%; /* Ensure the button is full width on mobile */
+    max-width: 300px; /* Limit the button width on larger screens */
+}
+
+button[type="submit"]:hover, .buy-button:hover, .contact-button:hover {
+    background-color: #3a5648; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+button[type="submit"]:active, .buy-button:active, .contact-button:active {
+    transform: translateY(0); /* Button returns to original position when clicked */
+}
 
 footer {
     background-color: #3a5648;
