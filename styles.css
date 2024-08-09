@@ -80,7 +80,7 @@ nav {
     transform: rotate(90deg); /* Rotate on hover */
 }
 
-/* Mobile Styles */
+/* Mobile Styles - Navigation */
 @media (max-width: 600px) {
     .menu-icon {
         display: block;
@@ -399,4 +399,40 @@ footer {
 
 .social-link:hover {
     background-color: #3a5648; /* Darker green on hover */
+}
+
+/* Mobile Styles - Flexbox Layout Adjustments */
+@media (max-width: 600px) {
+    .product {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: flex-start; /* Align items to the start */
+        text-align: center; /* Center text for a better appearance */
+    }
+
+    .product img {
+        width: 100%; /* Make the image take up the full width of the container */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 15px; /* Add some space below the image */
+    }
+
+    .product-info {
+        padding-left: 0; /* Remove padding to align text with image */
+        text-align: left; /* Align text to the left */
+    }
+
+    .product-info h3 {
+        font-size: 18px; /* Slightly increase font size for better readability */
+        margin-bottom: 10px; /* Space below the product title */
+    }
+
+    .product-info p {
+        font-size: 14px; /* Adjust the font size for better readability on small screens */
+        margin-bottom: 15px; /* Space below the description */
+    }
+
+    .product-info .buy-button {
+        width: 100%; /* Make the button take up the full width on mobile */
+        max-width: none; /* Remove max-width to allow full-width buttons */
+    }
 }
