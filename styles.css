@@ -173,7 +173,7 @@ section p, section ul {
 
 .product {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align items at the top */
     margin: 20px 0;
     padding: 15px;
     border: 1px solid #4a6658;
@@ -183,53 +183,37 @@ section p, section ul {
 }
 
 .product img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
+    width: auto; /* Maintain the aspect ratio */
+    height: 150px; /* Uniform height for all images */
+    object-fit: contain; /* Scale the image to fit within the defined height */
     border-radius: 10px;
     margin-right: 20px;
+    display: block;
 }
 
 .product-info {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start; /* Ensure content starts at the top */
+    padding-left: 0; /* Align text with image */
 }
 
 .product-info h3 {
     margin: 0;
     color: #2d3e34;
-    margin-bottom: 10px; /* Add space below product headings */
+    margin-bottom: 10px; /* Space below product title */
+    line-height: 1.2;
 }
 
 .product-info p {
     color: #4a6658;
-    margin: 5px 0; /* Adjust spacing for product descriptions */
+    margin: 0 0 15px 0; /* Add space below description */
+    flex-grow: 1; /* Allows the description to take up available space */
+    line-height: 1.5;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-label {
-    font-weight: bold;
-    color: #2d3e34; /* Darker dull green */
-    margin-bottom: 5px; /* Add space below labels */
-}
-
-input, textarea {
-    padding: 10px;
-    border: 1px solid #4a6658; /* Button green */
-    border-radius: 5px; /* Slightly rounded corners */
-    font-size: 1em;
-    margin-bottom: 10px; /* Add space below inputs and textareas */
-}
-
-button[type="submit"], .buy-button, .contact-button {
+.product-info .buy-button {
     background-color: #4a6658; /* Button green */
     color: #e1e7df;
     border: none;
@@ -238,15 +222,15 @@ button[type="submit"], .buy-button, .contact-button {
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
-    margin-top: 15px; /* Add some spacing above the button */
     text-decoration: none; /* Remove underline for links */
-    display: inline-block;
-    text-align: center;
+    align-self: flex-start; /* Align button to the left */
 }
 
-button[type="submit"]:hover, .buy-button:hover, .contact-button:hover {
+.product-info .buy-button:hover {
     background-color: #3a5648; /* Darker green on hover */
 }
+
+
 
 footer {
     background-color: #3a5648;
