@@ -185,7 +185,7 @@ section p, section ul {
 .product img {
     width: 150px;
     height: 150px; /* Ensure all images are square */
-    object-fit: cover; /* Crop images to fill the box, maintaining aspect ratio */
+    object-fit: contain; /* Ensure the entire image fits without cropping */
     border-radius: 10px;
     margin-right: 20px;
 }
