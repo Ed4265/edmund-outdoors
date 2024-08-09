@@ -279,6 +279,33 @@ button[type="submit"]:active, .buy-button:active, .contact-button:active {
     transform: translateY(0); /* Button returns to original position when clicked */
 }
 
+/* See All Books Button Styling */
+.see-all-books-button {
+    background-color: #4a6658; /* Button green */
+    color: #e1e7df; /* Light dull green */
+    border: none;
+    padding: 12px 24px; /* Adjusted padding for a better look */
+    border-radius: 25px; /* Highly rounded corners for a more modern look */
+    cursor: pointer;
+    font-size: 16px; /* Font size for the button text */
+    font-weight: bold; /* Make the button text bold */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    margin-top: 20px; /* Space above the button */
+    display: inline-block;
+    text-align: center;
+    text-decoration: none; /* Remove underline for links */
+}
+
+.see-all-books-button:hover {
+    background-color: #3a5648; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.see-all-books-button:active {
+    transform: translateY(0); /* Button returns to original position when clicked */
+}
+
 footer {
     background-color: #3a5648;
     width: 100%;
